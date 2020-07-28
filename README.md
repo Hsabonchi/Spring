@@ -5,11 +5,11 @@
 * @OneToMany is used to map entities
 * .getSingleResult()
       * Execute a SELECT query that returns a single result.
-      *  Specified by: getSingleResult() in Query
-      *   Returns:
-      *   the result
-      *  Throws:
-      * NoResultException - if there is no result
+        *  Specified by: getSingleResult() in Query
+        *   Returns:
+        *   the result
+        *  Throws:
+        * NoResultException - if there is no result
 
 
 ==============================================================================================
