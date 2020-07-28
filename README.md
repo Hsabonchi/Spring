@@ -1,4 +1,4 @@
-# Adv_web_brogramming
+#Java #Hibernate # Maven. # SpringBoot
 * [Interface EntityTransaction](https://www.objectdb.com/api/java/jpa/EntityTransaction).
 * [Hibernate Query Language](https://www.tutorialspoint.com/hibernate/hibernate_query_language.htm)
 * @ElementCollection is mainly for mapping non-entities.
