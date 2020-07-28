@@ -4,12 +4,12 @@
    * It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of  embeddable elements 
 * @OneToMany is used to map entities
 * .getSingleResult()
-      Execute a SELECT query that returns a single result.
-          Specified by: getSingleResult() in Query
-          Returns:
-          the result
-          Throws:
-          NoResultException - if there is no result
+      * Execute a SELECT query that returns a single result.
+      *  Specified by: getSingleResult() in Query
+      *   Returns:
+      *   the result
+      *  Throws:
+      * NoResultException - if there is no result
 
 
 ==============================================================================================
