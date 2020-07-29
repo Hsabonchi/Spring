@@ -1,6 +1,8 @@
 #Java #Hibernate # Maven. # SpringBoot
+* [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial)
 * [Interface EntityTransaction](https://www.objectdb.com/api/java/jpa/EntityTransaction).
 * [Hibernate Query Language](https://www.tutorialspoint.com/hibernate/hibernate_query_language.htm)
+
 * @ElementCollection is mainly for mapping non-entities.
    * It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of  embeddable elements 
 * @OneToMany is used to map entities
