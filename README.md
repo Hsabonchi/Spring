@@ -1,7 +1,10 @@
 ##Java ## Hibernate # Maven. # SpringBoot
 
 ---
-* [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial)
+
+
+
+* [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial) |   [Java persistence with JPA](https://www.infoworld.com/article/3373652/java-persistence-with-jpa-and-hibernate-part-1-entities-and-relationships.html)
 * [Interface EntityTransaction](https://www.objectdb.com/api/java/jpa/EntityTransaction).
 * [Hibernate Query Language](https://www.tutorialspoint.com/hibernate/hibernate_query_language.htm).
 * [JPA Mapping Annotations](https://www.javaguides.net/2018/11/all-jpa-annotations-mapping-annotations.html)
@@ -11,16 +14,10 @@
 * `@OneToMany` is used to map entities
 * .getSingleResult()
    * Execute a SELECT query that returns a single result.
-   *  Specified by: getSingleResult() in Query
-   *   Returns:
-   *   the result
-   *  Throws:
-   * NoResultException - if there is no result.
+*  `getResultList` executes the JPQL SELECT statement and returns the results as a List
 * JPA  Operations that modify database content, such as a store, update, and delete should only be performed within an active transaction.
   	---
-  - `entityManager.getTransaction().begin();`
-  - `entityManager.getTransaction().commit();`
-  - `entityManagerFactory.close();`
+  - `entityManager.getTransaction().begin();` | `entityManager.getTransaction().commit();`| `entityManagerFactory.close();`
   ---
   A simple Persistent class should follow some rules
   ----
