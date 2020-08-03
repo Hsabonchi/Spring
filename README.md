@@ -1,7 +1,7 @@
 ##Java ## Hibernate # Maven. # SpringBoot
 
 ---
-(JPA-1.png)
+(![alt text] JPA-1.png)
 
 
 * [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial) |   [Java persistence with JPA](https://www.infoworld.com/article/3373652/java-persistence-with-jpa-and-hibernate-part-1-entities-and-relationships.html)
