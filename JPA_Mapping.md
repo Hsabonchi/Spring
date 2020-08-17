@@ -15,6 +15,16 @@
   cascade is optional and used to specify which entity operations should be cascaded (propagated) to the associated entity, defaults to no  operations. cascade=ALL is equivalent to cascade={PERSIST, MERGE, REMOVE, REFRESH, DETACH}
  > fetch is optional and used to specify the strategy for the persistence provider runtime (Hibernate) to fetch data from the database
   There are two fetching strategies EAGER and LAZY, defaults to LAZY in ToMany associations (@OneToMany, @ManyToMany). When fetching data for an entity, JPA and Hibernate will also fetch data for EAGER associations while the LAZY will be fetched on-demand.
-> @JoinColumn annotation indicates that this entity will act as the owner of the relationship (This table has a column with a foreign key to the referenced table)
+> @JoinColumn annotation indicates that this entity will act as the owner of the relationship (This table has a column with a foreign key to the referenced table).
 > `@ElementCollection` is mainly for mapping non-entities.
-> It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of  embeddable elements 
+> It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of  embeddable elements .
+
+> @ManyToOne is used to specify a single-value relationship association to another entity which annotated with @OneToMany
+
+> fetch is optional and defaults to EAGER in ToOne associations (@ManyToOne, @OneToOne)
+The EAGER strategy should be avoided in practice, as it generates and executes unnecessary SQL scripts thus adds more weight load to the underlying database
+
+> @JoinColumn is used to specify the foreign key column in the underlying database table. In single join column, it is optional and the default attribute value will be used
+
+> name is defaulted to the property or field name joins with an underscore character and the primary key name of the reference entity
+referencedColumnName is defaulted to the primary key of the preferenced table
