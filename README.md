@@ -9,10 +9,6 @@
 * [Hibernate Query Language](https://www.tutorialspoint.com/hibernate/hibernate_query_language.htm).
 * [JPA Mapping Annotations](https://www.javaguides.net/2018/11/all-jpa-annotations-mapping-annotations.html)
 ---
- * @JoinColumn annotation indicates that this entity will act as the owner of the relationship (This table has a column with a foreign key to the referenced table)
- * `@ElementCollection` is mainly for mapping non-entities.
-   * It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of  embeddable elements 
-* `@OneToMany` is used to map entities
 * .getSingleResult()
    * Execute a SELECT query that returns a single result.
 *  `getResultList` executes the JPQL SELECT statement and returns the results as a List
