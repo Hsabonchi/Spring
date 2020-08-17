@@ -14,7 +14,7 @@
 >  mappedBy is required in a bidirectional relationship to specify the field or property name of the owner entity of the relationship
   cascade is optional and used to specify which entity operations should be cascaded (propagated) to the associated entity, defaults to no  operations. cascade=ALL is equivalent to cascade={PERSIST, MERGE, REMOVE, REFRESH, DETACH}
  > fetch is optional and used to specify the strategy for the persistence provider runtime (Hibernate) to fetch data from the database
-  There are two fetching strategies EAGER and LAZY, defaults to LAZY in ToMany associations (@OneToMany, @ManyToMany). When fetching data for an entity, JPA and Hibernate will also fetch data for EAGER associations while the LAZY will be fetched on-demand.
+  > > There are two fetching strategies EAGER and LAZY, defaults to LAZY in ToMany associations (@OneToMany, @ManyToMany). When fetching data      for an entity, JPA and Hibernate will also fetch data for EAGER associations while the LAZY will be fetched on-demand.
 > @JoinColumn annotation indicates that this entity will act as the owner of the relationship (This table has a column with a foreign key to the referenced table).
 > `@ElementCollection` is mainly for mapping non-entities.
 > It means that the collection is not a collection of entities, but a collection of simple types (Strings, etc.) or a collection of  embeddable elements .
@@ -29,4 +29,8 @@ The EAGER strategy should be avoided in practice, as it generates and executes u
 > name is defaulted to the property or field name joins with an underscore character and the primary key name of the reference entity
 referencedColumnName is defaulted to the primary key of the preferenced table.
 
-`In a One-to-Many/Many-to-One relationship, the owning side is usually defined on the ‘many' side of the relationship. It's usually the side which owns the foreign key.`
+`In a One-to-Many/Many-to-One relationship, the owning side is usually defined on the ‘many' side of the relationship. It's usually the side which owns the foreign key.The @JoinColumn annotation defines that actual physical mapping on the owning side`.
+
+`When you traverse from the “Many” side to the “One” side, you only need to make reference to one object, which is why the Employee class holds a single reference to an Employer class via the private Employer employer instance variable`.
+
+`However, when you traverse from the “One” to the “Many” side, you will need to hold a reference to MANY objects.`
