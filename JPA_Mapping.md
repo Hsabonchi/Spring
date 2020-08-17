@@ -27,4 +27,6 @@ The EAGER strategy should be avoided in practice, as it generates and executes u
 > @JoinColumn is used to specify the foreign key column in the underlying database table. In single join column, it is optional and the default attribute value will be used
 
 > name is defaulted to the property or field name joins with an underscore character and the primary key name of the reference entity
-referencedColumnName is defaulted to the primary key of the preferenced table
+referencedColumnName is defaulted to the primary key of the preferenced table.
+
+`In a One-to-Many/Many-to-One relationship, the owning side is usually defined on the ‘many' side of the relationship. It's usually the side which owns the foreign key.`
