@@ -49,4 +49,13 @@ An EntityManager instance is associated with a persistence context. A persistenc
 </ul>
 
 
+public class Customer {
+Integer id;
+String name;
+String address;
+@ElementCollection
+Set<String> phones;
+}
+
+
   
