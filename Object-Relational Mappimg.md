@@ -11,5 +11,22 @@ A class whose objects need to be saved (i.e. persisted) in a database
 <li> Any Java model class can be a persistent class, though it is recommendedthat </li>
   <li> Each persistent class has an identity field. </li>
   <li> Each persistent class implements the Serializableinterface</li><strong>Object of this class can be converted into binary and backs the main purpose of this requirement is to allow the object caching function in the orm tool to save the cache object on disks when memory cach is full </strong>
-  <li> Each persistent field(filed need to be saved into DB) has a pair of getterand setter, which don’t have to be public<li>
+  <li> Each persistent field(filed need to be saved into DB) has a pair of getterand setter, which don’t have to be public</li>
 </ul>
+
+`@Entity
+This annotation indicates that the class is mapped to a database table
+ By default, the ORM framework understands that the class name is as same as the table name. 
+The @Entity annotation must be placed before the class definition:`
+
+`@Table(name = )
+This annotation is used if the class name is different than the database table name, and it is must placed before the class definition.`
+
+`@Id
+    This annotation specifies that a field is mapped to a primary key column in the table.
+    Declares the primary key of the entity`.
+    
+`@GeneratedValue
+    If the values of the primary column are auto-increment, 
+    we need to use this annotation to tell Hibernate knows, along with`
+  
