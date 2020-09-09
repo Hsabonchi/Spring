@@ -36,6 +36,9 @@ An EntityManager instance is associated with a persistence context. A persistenc
 
 -- merge return a refrence to a manged object
 
+-- JPA requires a transction to be used whenever we try to write to DB like insert, update and delete and commit after writting to a DB
+
+
 <h3>JPQL</h3>
 <ul>
   <li> It operates on classes object and  properties instead of tables columns </li>
