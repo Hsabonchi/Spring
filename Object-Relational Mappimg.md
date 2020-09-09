@@ -34,5 +34,16 @@ This annotation is used if the class name is different than the database table n
   Interface used to interact with the persistence context.
 An EntityManager instance is associated with a persistence context. A persistence context is a set of entity instances in which for any persistent entity identity there is a unique entity instance.he EntityManager API is used to create and remove persistent entity instances, to find entities by their primary key, and to query over entities.
 
+-- merge return a refrence to a manged object
+
+<h3>JPQL</h3>
+<ul>
+  <li> It operates on classes object and  properties instead of tables columns </li>
+  <li> The Select clause can be omitted </li>
+  <li> we are selecting objects not columns </li>
+  <li> Passing object as a vlaue of parameter</li>
+  <li>  where properties - you can do supervisor.supervisor means property.property </li>
+</ul>
+
 
   
