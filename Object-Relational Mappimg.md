@@ -29,4 +29,10 @@ This annotation is used if the class name is different than the database table n
 `@GeneratedValue
     If the values of the primary column are auto-increment, 
     we need to use this annotation to tell Hibernate knows, along with`
+    
+ [Interface EntityManager](https://docs.jboss.org/hibernate/jpa/2.2/api/javax/persistence/EntityManager.html):
+  Interface used to interact with the persistence context.
+An EntityManager instance is associated with a persistence context. A persistence context is a set of entity instances in which for any persistent entity identity there is a unique entity instance.he EntityManager API is used to create and remove persistent entity instances, to find entities by their primary key, and to query over entities.
+
+
   
