@@ -1,0 +1,18 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+    version="2.1">
+
+    <persistence-unit name="hibernate-HW2" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://cs3.calstatela.edu/cs5220stu01?allowPublicKeyRetrieval=true&amp;useSSL=false" />
+            
+            <property name="javax.persistence.jdbc.user" value="cs5220stu01" />
+            <property name="javax.persistence.jdbc.password" value="d1vhqzJfb6Ed" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+            <property name="hibernate.show_sql" value="false" />
+        </properties>
+    </persistence-unit>
+
+</persistence>
