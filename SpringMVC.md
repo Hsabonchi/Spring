@@ -1,1 +1,1 @@
-`Model objects are passed to view using a ModelMapput( String, Object )attributename    attributevalue`
+`Model objects are passed to view using a ModelMapput( String, Object )attributenameattributevalue`
