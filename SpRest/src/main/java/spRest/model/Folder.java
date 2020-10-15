@@ -35,7 +35,7 @@ public class Folder implements Serializable{
 	@Column(name="name")
 	private String name;
 	
-	 int numChild;
+	
 	
 	@ManyToOne
 	private Folder Parent ;
@@ -92,12 +92,7 @@ public class Folder implements Serializable{
 	public void setFile(List<UFiles> file) {
 		this.file = file;
 	}
-	public int getNumChild() {
-		return numChild;
-	}
-	public void setNumChild(int numChild) {
-		this.numChild = numChild;
-	}
+	
 	
 
 	

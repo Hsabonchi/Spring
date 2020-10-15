@@ -33,17 +33,18 @@ import spRest.model.dao.VersionDao;
 @RequestMapping("/folders")
 public class FolderController {
 
-    @Autowired
-    private FolderDao folderDao;
-    @Autowired
-    private FileDao  fileDao;
-    
-    @Autowired
-	private VersionDao   versionDao;
+@Autowired
+private FolderDao folderDao;
+@Autowired
+private FileDao  fileDao;
+
+@Autowired
+private VersionDao   versionDao;
 
     
-    //List all top-level files and folders
+    //1) List all top-level files and folders
     @GetMapping
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public List<FolderDto> getTopLevel(ModelMap Models)
    { 
       //Top-Level Folder: get all folder where parent is null
@@ -65,116 +66,173 @@ public class FolderController {
      return  folderDtos;
     }
     
-    //List all files and folders in an existing folder
-    @GetMapping("/{id}")
-    public  List<FolderDto>  getChildren( @PathVariable Integer id )
-    {   
-          //Intiaite an arrayList of Dtos
-  	      List<FolderDto> folderDtos= new ArrayList<FolderDto>();
-  	      
-      	  //get Folders where id=Passing through url
-          Folder  folderObj = folderDao.getFolder( id );
-          List<Folder> foldersList=folderDao.getChilds(folderObj);
-  	      
-          for (Folder f:foldersList)
-       		 folderDtos.add(new FolderDto(f));
-          
-           // get files where id=Passing through url
-           List<UFiles>listChilds=fileDao.getchilds(folderObj);
-          
-          // add files to Dto list 
-      	  for (UFiles file:listChilds)
-       		folderDtos.add(new FolderDto(file));
-       
-        return folderDtos;
+ //2)List all files and folders in an existing folder
+@GetMapping("/{id}")
+@ResponseStatus(HttpStatus.ACCEPTED)
+public  List<FolderDto>  getChildren( @PathVariable Integer id )
+{   
+      //Intiaite an arrayList of Dtos
+      List<FolderDto> folderDtos= new ArrayList<FolderDto>();
+      
+  	  //get Folders where id=Passing through url
+      Folder  folderObj = folderDao.getFolder( id );
+      List<Folder> foldersList=folderDao.getChilds(folderObj);
+      
+      for (Folder f:foldersList)
+   		 folderDtos.add(new FolderDto(f));
+      
+       // get files where id=Passing through url
+       List<UFiles>listChilds=fileDao.getchilds(folderObj);
+      
+      // add files to Dto list 
+  	  for (UFiles file:listChilds)
+   		folderDtos.add(new FolderDto(file));
+   
+    return folderDtos;
+    
+}
         
-    }
-    
-    
-
-//    @DeleteMapping("/{id}")
-//    String deleteFolder(@PathVariable Integer id)throws Exception {
-//    	// get id from URL
-//    	int  numofdel = 0;
-//    	Folder Parentfolder;
-//    	List<Folder> childFolder = null;
-//		try {
-//			if (folderDao.getFolder(id)==null) {
-//				return "Folder is not exist";
-//			}
-//			Parentfolder = folderDao.getFolder(id);	
-//			 // Files at first level
-//			 numofdel+=Parentfolder.getFile().size();
-//			 
-//	    	 //folders at first level
-//	    	 List<Folder> foldersList=folderDao.numrofChild(Parentfolder);	 
-//	    	if(!foldersList.isEmpty()&& !fileDao.getchilds(Parentfolder).isEmpty()) {
-//	    	
-//	    		//folderDao.deleteFolder(Parentfolder);
-//	    		return  "total numbers of the folders and files deleted  are  "+33;
-//	       }
-//	    		 else {
-//	    			//folderDao.deleteFolder(Parentfolder);
-//	 	    		return  "total numbers of the folders and files deleted  are  "+1;
-//	    		 }
-//		} catch (Exception e) {
-//			throw new Exception("Generic Exception, id="+id);
-//		}
-//    	
-//      }
-    
-    //Create a new top-level folder
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public FolderDto add( @RequestBody FolderDto dto )
+//3)Create a new top-level folder
+@PostMapping
+@ResponseStatus(HttpStatus.CREATED)
+public FolderDto add( @RequestBody FolderDto dto )
+{
+    if( !StringUtils.hasText( dto.getName() ) )
+        throw new ResponseStatusException( HttpStatus.BAD_REQUEST,
+            "Foldre name is required" );
+    // Create new folder
+    Folder folder = new Folder();
+    // set the folder name
+    folder.setName( dto.getName() );       
+    if( dto.getParentId() != null )
     {
-        if( !StringUtils.hasText( dto.getName() ) )
-            throw new ResponseStatusException( HttpStatus.BAD_REQUEST,
-                "Foldre name is required" );
-        // Create new folder
-        Folder folder = new Folder();
-        // set the folder name
-        folder.setName( dto.getName() );
-        
-        if( dto.getParentId() != null )
-        {
-        	Folder parent = folderDao.getFolder( dto.getParentId());
-        	folder.setParent(parent);
-        }
-
-        folder = folderDao.save( folder );
-        return new FolderDto( folder );
-    }
-    
-    
-    
-    //Create a new folder under specific folder
-    //Create a new folder in an existing folder
-    @PostMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public FolderDto addToparent(@PathVariable Integer id,@RequestBody FolderDto dto )
-    {
-    
-        Folder Parentfolder = folderDao.getFolder(id);
-        if (Parentfolder==null) {
-			throw new  ResponseStatusException (HttpStatus.NOT_FOUND,"Folder not Found");
-		}
-		Parentfolder = folderDao.getFolder(id);
-		Parentfolder.setNumChild(Parentfolder.getNumChild()+1);
-		
-        // Create new folder
-        Folder folder = new Folder();
-        // set the folder name
-        folder.setName( dto.getName() );
-        
-        Folder parent = folderDao.getFolder(Parentfolder.getId() );
+    	Folder parent = folderDao.getFolder( dto.getParentId());
     	folder.setParent(parent);
-    	folder = folderDao.save( folder );
-        return new FolderDto( folder );
     }
+    folder = folderDao.save( folder );
+    return new FolderDto( folder );
+}
+    
+       
+//4)Create a new folder in an existing folder
+@PostMapping("/{id}")
+@ResponseStatus(HttpStatus.CREATED)
+public FolderDto addToparent(@PathVariable Integer id,@RequestBody FolderDto dto )
+{
+
+    Folder Parentfolder = folderDao.getFolder(id);
+    if (Parentfolder==null) {
+		throw new  ResponseStatusException (HttpStatus.NOT_FOUND,"Folder not Found");
+	}
+	Parentfolder = folderDao.getFolder(id);
+	
+	
+    // Create new folder
+    Folder folder = new Folder();
+    // set the folder name
+    folder.setName( dto.getName() );
+    
+    Folder parent = folderDao.getFolder(Parentfolder.getId() );
+	folder.setParent(parent);
+	folder = folderDao.save( folder );
+    return new FolderDto( folder );
+}
     
     
+@DeleteMapping("{id}")
+String deleteFolder2222(@PathVariable Integer id){
+	
+	// get id from URL
+	int  numofdel = 0;
+	Folder Parentfolder=null;
+	List<Folder> childFolder = null;
+	
+	if (folderDao.getFolder(id)==null) {
+	   return "Folder is not exist";
+	 }
+	 //folders at first level
+	Parentfolder = folderDao.getFolder(id);
+    List<Folder> foldersList=folderDao.numrofChild(Parentfolder);
     
+    if(foldersList.isEmpty()&& fileDao.getchilds(Parentfolder).isEmpty()) {
+    		folderDao.deleteFolder(Parentfolder);
+	    		return  "total numbers of the folders and files deleted  are is leave "+1;
+            }
+    else {
+
+         /* Scan first level
+    	  count No. of files and folders
+    	  iterate over each folder in the list of subfolders
+    	  if has subfolders send them to countchild function
+    	*/
+    	
+    	  /* check if it has files - under the  parent folder
+    	  counting n. of files */
+    	
+    	if (Parentfolder.getFile()!=null) {
+			  numofdel+=Parentfolder.getFile().size();
+			  
+	          }
+    	
+    	   // count no. of children
+    	  numofdel+=foldersList.size();
+    	 // foldersList is a list of children
+    	for (Folder f:foldersList) {
+    		// check if the child has a child (sub foldder)---c1 hsa a c1.2
+		    childFolder=folderDao.numrofChild(f);
+		     
+		    if(!childFolder.isEmpty()) {
+			    counter=0;
+			    int countChild=countChild(childFolder);
+			    numofdel+=countChild;
+			  }
+		    // check if it has subfiles
+		       numofdel+=f.getFile().size();
+			}	  
+    	numofdel+=1;
+    	folderDao.deleteFolder(Parentfolder);
+	    return  "total numbers of the folders and files deleted  are  "+numofdel;
+    		 
+     }
+    
+    }
+        static int counter;
+	    int countChild(List<Folder> childFolder) {
+	    	
+	      /* recived is a list of  childfolders
+	       	 that has a child folder e.g c1 child of c (parent)
+			 count No. of child - childFolder.size() if its not empty
+			 iterate over each subfolder e.g C1 - 
+			 count files under each subfolder
+			 if numrofChild for the subfolder not empty
+	         redo it the process again*/
+	    	
+	    	if(!childFolder.isEmpty() ) {
+	    		counter+=childFolder.size();
+	    		
+    		for (Folder childfol:childFolder) {
+    			
+				if (childfol.getFile()!=null) {
+					counter+=childfol.getFile().size();
+					  
+			        }
+    			// check if it has sub folder
+		    	List<Folder> subFolder =folderDao.numrofChild(childfol);
+		    	if(!subFolder.isEmpty()) {
+	    			countChild(subFolder);
+	    		  }
+		      }
+		    	
+	    	}
+	    
+	    	
+			return counter;
+	    	
+	    	
+	    }
+
+
+
     
 //  
 //  @GetMapping("/{id}")
@@ -206,61 +264,37 @@ public class FolderController {
 //   return  folderDtos;
 //  }
     
-    
-    @DeleteMapping("del/{id}")
-    String deleteFolder2222(@PathVariable Integer id){
-    	// get id from URL
-    	int  numofdel = 0;
-    	Folder Parentfolder;
-    	List<Folder> childFolder = null;
-		
-		if (folderDao.getFolder(id)==null) {
-		   return "Folder is not exist";
-		 }
-		 Parentfolder = folderDao.getFolder(id);	
-		 // Files at first level
-		  if (Parentfolder.getFile()!=null) {
-			  numofdel+=Parentfolder.getFile().size();
-			 }
-		
-	    //folders at first level
-	    List<Folder> foldersList=folderDao.numrofChild(Parentfolder);
-	    if(foldersList.isEmpty()&& fileDao.getchilds(Parentfolder).isEmpty()) {
-	    		folderDao.deleteFolder(Parentfolder);
- 	    		return  "total numbers of the folders and files deleted  are is leave "+1;
-	            }
-	    else {
-	    			
-	 	    		
-	 	    numofdel+=foldersList.size();
-		    // Iterate over each Folder in the list
-			for (Folder f:foldersList) {
-			numofdel+=f.getNumChild();
-		    childFolder=folderDao.numrofChild(f);
-			if(!childFolder.isEmpty()) {
-			    numofdel+=childFolder.size();	
-				}
-			}
-			    	  		
-		    //return list of child files
-		    List<UFiles>files=fileDao.getchilds(Parentfolder);
-		    // list of version
-		    if(!files.isEmpty()) {
-		    	for (UFiles f:files) {
-		    	    
-			    numofdel+=f.getCurVersion();
-			    //int versions=versionDao.getfilesVers(files.get(0)).size();
-			    //numofdel+=(versions+1);
-				}
-		    }		
-		    folderDao.deleteFolder(Parentfolder);
-		    numofdel+=1;
-		    return  "total numbers of the folders and files deleted  are  "+numofdel;
-	   
-	    		 
-      }
-    }
-    
+//  @DeleteMapping("/{id}")
+//  String deleteFolder(@PathVariable Integer id)throws Exception {
+//  	// get id from URL
+//  	int  numofdel = 0;
+//  	Folder Parentfolder;
+//  	List<Folder> childFolder = null;
+//		try {
+//			if (folderDao.getFolder(id)==null) {
+//				return "Folder is not exist";
+//			}
+//			Parentfolder = folderDao.getFolder(id);	
+//			 // Files at first level
+//			 numofdel+=Parentfolder.getFile().size();
+//			 
+//	    	 //folders at first level
+//	    	 List<Folder> foldersList=folderDao.numrofChild(Parentfolder);	 
+//	    	if(!foldersList.isEmpty()&& !fileDao.getchilds(Parentfolder).isEmpty()) {
+//	    	
+//	    		//folderDao.deleteFolder(Parentfolder);
+//	    		return  "total numbers of the folders and files deleted  are  "+33;
+//	       }
+//	    		 else {
+//	    			//folderDao.deleteFolder(Parentfolder);
+//	 	    		return  "total numbers of the folders and files deleted  are  "+1;
+//	    		 }
+//		} catch (Exception e) {
+//			throw new Exception("Generic Exception, id="+id);
+//		}
+//  	
+//    }
+   
     
     
     
