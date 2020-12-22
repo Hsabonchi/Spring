@@ -2,6 +2,7 @@
 Resouces_Name  |Link
 --- |---
 **Dr.Sun** |[Entity-Relationship Model](https://www.youtube.com/watch?v=gWm3lL7HZUg)
+**Dr.Sun** |[Object-Relational Mapping with Hibernate and JPA (I)](https://www.youtube.com/watch?v=L91Lbinp_RU)
 **Dr.Sun** |[Object Relational Mapping with Hibernate and JPA (II)](https://www.youtube.com/watch?v=KGM3LqDaO8s)
 **Dr.Sun** |[Spring - Aspect Oriented Programming](https://www.youtube.com/watch?v=evjB-SXnZ78)
 **Dr.Sun** |[Spring - Web MVC](https://www.youtube.com/watch?v=9_Dldx4fTpQ)
