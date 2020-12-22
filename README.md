@@ -1,4 +1,4 @@
-##Java ## Hibernate # Maven. # SpringBoot
+## Java-Hibernate-Maven- SpringBoot
 Resouces_Name  |Link
 --- |---
 **Dr.Sun** |[Object Relational Mapping with Hibernate and JPA (II)](https://www.youtube.com/watch?v=KGM3LqDaO8s)
