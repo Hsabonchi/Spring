@@ -8,7 +8,7 @@ Resouces_Name  |Link
 **Dr.Sun** |[Spring - Web MVC](https://www.youtube.com/watch?v=9_Dldx4fTpQ)
 **Dr.Sun** |[Spring - Web Services](https://www.youtube.com/watch?v=srqJ5ujwsA4)
 **Dr.Sun** |[REST API with Spring Boot](https://www.youtube.com/watch?v=EsLDbRbEcJU)
-
+**Dr.Sun** |[Secure REST API](https://www.youtube.com/watch?v=V-iiEUsJpC0)
 
 ---
 
