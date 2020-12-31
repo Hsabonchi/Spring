@@ -9,7 +9,7 @@ Resouces_Name  |Link
 **Dr.Sun** |[Spring - Web Services](https://www.youtube.com/watch?v=srqJ5ujwsA4)
 **Dr.Sun** |[REST API with Spring Boot](https://www.youtube.com/watch?v=EsLDbRbEcJU)
 **Dr.Sun** |[Secure REST API](https://www.youtube.com/watch?v=V-iiEUsJpC0)
-
+**Dr.Sun** |[Create a Spring Boot Project](https://csns.calstatela.edu/wiki/content/cysun/course_materials/cs5220/spring-boot-rest/)
 ---
 
 * [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial) |   [Java persistence with JPA](https://www.infoworld.com/article/3373652/java-persistence-with-jpa-and-hibernate-part-1-entities-and-relationships.html)
