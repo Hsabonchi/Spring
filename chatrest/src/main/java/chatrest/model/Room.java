@@ -7,11 +7,13 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Room implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @Id
   @GeneratedValue
   private int id;
 
-  private String name;
+  private String nameX;
 
   private int totalMember;
 
@@ -25,17 +27,17 @@ public class Room implements Serializable {
 
   public Room(String name) {
     super();
-    this.name = name;
+    this.nameX = name;
     this.totalMember = 0;
   }
 
 
   public String getName() {
-    return name;
+    return nameX;
   }
 
   public void setName(String name) {
-    this.name = name;
+    this.nameX = name;
   }
 
   public int getTotalMember() {
