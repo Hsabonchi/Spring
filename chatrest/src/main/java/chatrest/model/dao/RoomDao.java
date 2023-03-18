@@ -9,7 +9,7 @@ public interface RoomDao {
   Room saveRoom(Room room);
 
   // read
-  List<Room> getRoom();
+  List<Room> getRooms();
 
   Room getRoom(Integer id);
 

@@ -1,11 +1,16 @@
 package chatrest.model;
 
 import java.io.Serializable;
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+
+
 
 @Entity
+
 public class Room implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -13,39 +18,49 @@ public class Room implements Serializable {
   @GeneratedValue
   private int id;
 
-  private String nameX;
+  private String roomName;
 
   private int totalMember;
 
+  private boolean deleted = Boolean.FALSE;
+
+  @ManyToMany(mappedBy = "rooms")
+  private List<Member> member;
 
 
   public Room() {
     super();
-    // TODO Auto-generated constructor stub
   }
-
 
   public Room(String name) {
     super();
-    this.nameX = name;
+    this.roomName = name;
     this.totalMember = 0;
   }
 
+  // public String getRoomName() {
+  // return roomName;
+  // }
 
-  public String getName() {
-    return nameX;
+  public void setRoomName(String roomName) {
+    this.roomName = roomName;
   }
 
-  public void setName(String name) {
-    this.nameX = name;
-  }
-
-  public int getTotalMember() {
-    return totalMember;
-  }
+  // public int getTotalMember() {
+  // return totalMember;
+  // }
 
   public void setTotalMember(int totalMember) {
     this.totalMember = totalMember;
+  }
+
+  public boolean isDeleted() {
+    return deleted;
+  }
+
+
+  public void setDeleted(boolean deleted) {
+    this.deleted = deleted;
   }
 
 

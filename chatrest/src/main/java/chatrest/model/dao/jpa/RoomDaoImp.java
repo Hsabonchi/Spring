@@ -22,7 +22,7 @@ public class RoomDaoImp implements RoomDao {
   }
 
   @Override
-  public List<Room> getRoom() {
+  public List<Room> getRooms() {
 
     return entityManager.createQuery("from Room", Room.class).getResultList();
   }
