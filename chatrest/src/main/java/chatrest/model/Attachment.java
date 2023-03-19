@@ -4,11 +4,17 @@ import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-public class File implements Serializable {
+@Getter
+@Setter
+@NoArgsConstructor
+public class Attachment implements Serializable {
 
-  private static final long serialVersionUID = 8640002399326229132L;
+  private static final long serialVersionUID = 5675848444199517842L;
 
   @Id
   @GeneratedValue
@@ -17,7 +23,5 @@ public class File implements Serializable {
   private String type;
 
   private byte[] contents;
-
-
 
 }
