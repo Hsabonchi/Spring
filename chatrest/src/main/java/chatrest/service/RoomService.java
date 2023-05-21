@@ -1,14 +1,13 @@
 package chatrest.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 import chatrest.dto.RoomDto;
-import chatrest.entity.Attachment;
 import chatrest.entity.Member;
 import chatrest.entity.Room;
-import chatrest.repository.AttachmentRepository;
 import chatrest.repository.MemberRepository;
 import chatrest.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,61 +17,79 @@ import lombok.RequiredArgsConstructor;
 public class RoomService {
 
   private final RoomRepository roomRepository;
-  private final AttachmentRepository attachmentRepository;
+  // private final MediaFileRepository mediaFileRepository;
   private final MemberRepository memberRepository;
 
   public boolean addOrUpdate(RoomDto roomDto) {
     try {
-      // room attributes
 
+      System.out.println("roomDto --> " + roomDto);
+      // room attributes
       Room room = new Room();
       room.setId(roomDto.getRoomId());
       room.setRoomName(roomDto.getRoomName());
-      room.setTagName(roomDto.getTagName());
+      room.setTagName(roomDto.getTagName().toString());
 
       // Attachment attributes
 
-      List<Attachment> result = attachmentRepository.findAllById(roomDto.getAttachtId());
-      Set<Attachment> attachments = new HashSet(result);
+      // List<MediaFile> mediaFileList = mediaFileRepository.findAllById(roomDto.getAttachtId());
+      // Set<MediaFile> attachments = new HashSet(mediaFileList);
+      // room.setFiless(attachments);
 
-      room.setAttachment(attachments);
+      // Member attributes
 
-      Member member = null;
+      Set<Long> setIds = roomDto.getMemberId();
+      System.out.println("setIds == > " + setIds);
+      if (setIds != null) {
+        List<Member> listMembers = memberRepository.findAllById(setIds);
+        System.out.println("listMembers == > " + listMembers);
+        room.getMembers().addAll(listMembers);
+        System.out.println("room.getMembers() == > " + room.getMembers());
+      }
 
-      List<Member> result2 = memberRepository.findAllById(roomDto.getMemberId());
-      Set<Member> members = new HashSet(result2);
-
-      room.setMember(members);
-
+      // System.out.println("members --> " + members);
       roomRepository.save(room);
 
-      // roomRepository.save(room);
     } catch (Exception e) {
       return false;
     }
     return true;
   }
 
-  public List<Room> getAllRooms() {
+  public List<RoomDto> findAllRooms() {
 
-    return roomRepository.findAll();
+    // holds all RoomDto objects as a final result
+    List<RoomDto> roomDtoList = new ArrayList();
+    // fetching all room from DB to convert room to roomDto
+    for (Room room : roomRepository.findAll()) {
 
+      System.out.println("room --> " + room);
+
+      RoomDto roomDto = new RoomDto();
+      roomDto.setRoomId(room.getId());
+      roomDto.setRoomName(room.getRoomName());
+      roomDto.setTagName(room.getTagName());
+      roomDtoList.add(roomDto);
+      // empty set for Members
+      Set<Long> setMem = new HashSet();
+
+      System.out.println("room.getMembers() --> " + room.getMembers());
+      Set<Member> setMembers = room.getMembers();
+      System.out.println("setMembers --> " + setMembers);
+
+      if (setMembers != null) {
+        for (Member r : setMembers) {
+          setMem.add(r.id);
+        }
+      }
+      roomDto.setMemberId(setMem);
+    }
+    return roomDtoList;
   }
 
-  // public Room getRoomById(Long id) {
-  // return roomRepository.;
-  // }
+  public Room findById(Long id) {
 
-  // public boolean deleteRoomById(Long id) {
-  // if (roomRepository.existsById(id)) {
-  // Room room = roomRepository.findById(id).get();
-  // roomRepository.delete(room);
-  // return true;
-  // } else {
-  // return false;
-  // }
-  // }
+    return roomRepository.findById(id).get();
 
-
-
+  }
 }

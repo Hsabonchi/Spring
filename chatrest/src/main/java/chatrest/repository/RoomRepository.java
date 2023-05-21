@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import chatrest.entity.Room;
 
 @Repository
-public interface RoomRepository extends JpaRepository<Room, String> {
+public interface RoomRepository extends JpaRepository<Room, Long> {
 
 
 

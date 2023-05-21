@@ -10,23 +10,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import chatrest.dto.RoomDto;
+import chatrest.dto.MemberDto;
+import chatrest.entity.Member;
 import chatrest.entity.Room;
-import chatrest.service.RoomService;
+import chatrest.service.MemberService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/rooms")
-public class RoomController {
+@RequestMapping("/members")
+public class MemberController {
 
 
-  private final RoomService roomService;
+  private final MemberService memberService;
 
   @GetMapping
   @ResponseStatus(HttpStatus.ACCEPTED)
-  private List<RoomDto> findAllRooms(ModelMap models) {
-    return roomService.findAllRooms();
+  private List<Member> findAllRooms(ModelMap models) {
+    return memberService.findAllMembers();
   }
 
   @GetMapping("/{id}")
@@ -42,8 +43,8 @@ public class RoomController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  private String addRoom(@RequestBody RoomDto roomDto) {
-    roomService.addOrUpdate(roomDto);
+  private String addRoom(@RequestBody MemberDto memberDto) {
+    memberService.addOrUpdate(memberDto);
     return "Success";
   }
 

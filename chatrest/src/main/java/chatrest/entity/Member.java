@@ -3,14 +3,12 @@ package chatrest.entity;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
@@ -21,26 +19,34 @@ public class Member implements Serializable {
 
   @Id
   @GeneratedValue
-  private Integer id;
+  public Long id;
 
   @Column(name = "user_name", nullable = false, unique = true)
   private String userName;
 
   private String password;
 
-  @Column(nullable = false, unique = true)
+  @Column(nullable = false)
   private String primaryEmail;
 
+  // a Member can be an admin of Multiple Room
+  /*
+   * One room has multiple admins Multiple admin can mange at max 2 rooms only
+   * 
+   */
   @Column(name = "is_admin")
   private boolean isAdmin = false;
 
-  @OneToOne
-  private Attachment attachment;
 
+  @Column(name = "is_Moderator")
+  private boolean isModerator;
 
-  @ManyToMany
-  @JoinTable(name = "room_member", joinColumns = {@JoinColumn(name = "m_id")},
-      inverseJoinColumns = {@JoinColumn(name = "r_id")})
+  /*
+   * one place is mappedBy, other class should joinTable.. This side id the inverse relationship of
+   * the M-M, owner is the members
+   */
+
+  @ManyToMany(mappedBy = "members", cascade = CascadeType.ALL)
   private Set<Room> rooms = new HashSet();
 
 }
