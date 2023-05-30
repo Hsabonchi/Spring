@@ -23,7 +23,8 @@ public class RoomService {
   public boolean addOrUpdate(RoomDto roomDto) {
     try {
 
-      System.out.println("roomDto --> " + roomDto);
+      System.out.println("recieved roomDto --> " + roomDto);
+
       // room attributes
       Room room = new Room();
       room.setId(roomDto.getRoomId());
@@ -32,22 +33,17 @@ public class RoomService {
 
       // Attachment attributes
 
-      // List<MediaFile> mediaFileList = mediaFileRepository.findAllById(roomDto.getAttachtId());
-      // Set<MediaFile> attachments = new HashSet(mediaFileList);
-      // room.setFiless(attachments);
-
-      // Member attributes
-
+      // Get MembersId and Save them
       Set<Long> setIds = roomDto.getMemberId();
       System.out.println("setIds == > " + setIds);
+
       if (setIds != null) {
         List<Member> listMembers = memberRepository.findAllById(setIds);
-        System.out.println("listMembers == > " + listMembers);
+        System.out.println("listMembersObj == > " + listMembers);
         room.getMembers().addAll(listMembers);
         System.out.println("room.getMembers() == > " + room.getMembers());
       }
 
-      // System.out.println("members --> " + members);
       roomRepository.save(room);
 
     } catch (Exception e) {
@@ -69,7 +65,7 @@ public class RoomService {
       roomDto.setRoomId(room.getId());
       roomDto.setRoomName(room.getRoomName());
       roomDto.setTagName(room.getTagName());
-      roomDtoList.add(roomDto);
+      // roomDtoList.add(roomDto);
       // empty set for Members
       Set<Long> setMem = new HashSet();
 
@@ -83,13 +79,31 @@ public class RoomService {
         }
       }
       roomDto.setMemberId(setMem);
+      roomDtoList.add(roomDto);
     }
     return roomDtoList;
   }
 
-  public Room findById(Long id) {
+  public RoomDto findById(Long id) {
 
-    return roomRepository.findById(id).get();
+    Room roomObj = roomRepository.findById(id).get();
+    RoomDto roomDto = new RoomDto();
+    roomDto.setRoomId(roomObj.getId());
+    roomDto.setRoomName(roomObj.getRoomName());
+    roomDto.setTagName(roomObj.getTagName());
+
+    Set<Long> setRoom = new HashSet();
+
+    for (Member r : roomObj.getMembers()) {
+      setRoom.add(r.getId());
+    }
+
+    roomDto.setMemberId(setRoom);
+
+    return roomDto;
+
+
 
   }
+
 }

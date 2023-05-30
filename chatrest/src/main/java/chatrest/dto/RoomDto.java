@@ -12,4 +12,5 @@ public class RoomDto {
   // private Set<Long> attachtId;
   private Set<Long> memberId;
 
+
 }

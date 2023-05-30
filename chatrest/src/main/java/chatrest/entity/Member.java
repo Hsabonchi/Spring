@@ -3,12 +3,15 @@ package chatrest.entity;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Data
@@ -46,7 +49,12 @@ public class Member implements Serializable {
    * the M-M, owner is the members
    */
 
+  @JsonIgnore
   @ManyToMany(mappedBy = "members", cascade = CascadeType.ALL)
   private Set<Room> rooms = new HashSet();
+
+  @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  Set<Post> posts = new HashSet();
+
 
 }
