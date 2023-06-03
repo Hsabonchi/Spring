@@ -3,6 +3,8 @@ package chatrest.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import chatrest.entity.Member;
 import org.springframework.stereotype.Service;
 import chatrest.dto.PostDto;
 import chatrest.entity.Post;
@@ -64,11 +66,10 @@ public class PostService {
     return post;
 
 
-
   }
 
 
-  private PostDto getPostById(Long id) {
+  public PostDto getPostById(Long id) {
 
     Post post = postRepository.findById(id).get();
     PostDto postDto = new PostDto();
@@ -77,8 +78,22 @@ public class PostService {
 
     return postDto;
 
-
   }
 
 
+  public boolean deletePostById(Long id, String username) {
+
+
+    if (postRepository.existsById(id)) {
+      Member member = memberRepository.getByName(username);
+      Post post = postRepository.findById(id).get();
+      if (post.getMember().getId() == member.getId()) {
+        postRepository.deleteById(id);
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
 }
