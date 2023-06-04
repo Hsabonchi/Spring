@@ -1,21 +1,22 @@
 package chatrest.entity;
 
-import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
 @Data
-@AllArgsConstructor
+@Entity
 @NoArgsConstructor
-
 public class Role implements GrantedAuthority {
 
-    public static final String USER_ADMIN = "USER_ADMIN";
-    public static final String AUTHOR_ADMIN = "AUTHOR_ADMIN";
-    public static final String BOOK_ADMIN = "BOOK_ADMIN";
-
+    @Id
+     @Column(name = "id")
+     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;
+    private static final String USER_ADMIN = "USER_ADMIN";
+    private static final String AUTHOR_ADMIN = "AUTHOR_ADMIN";
+    private static final String BOOK_ADMIN = "BOOK_ADMIN";
     private String authority;
 
 }

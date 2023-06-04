@@ -38,6 +38,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     // JWT Token is in the form "Bearer token". Remove Bearer word and get only the Token
 
     if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
+      // get the jwt token
       jwtToken = requestTokenHeader.substring(7);
       try {
         username = jwtTokenUtil.getUsernameFromToken(jwtToken);
@@ -60,8 +61,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
 
         // why here is null
+        /*
+           userDetails is the user object which is the principle
+        */
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-            new UsernamePasswordAuthenticationToken(userDetails, null,
+            new UsernamePasswordAuthenticationToken( userDetails, null,
                 userDetails.getAuthorities());
         usernamePasswordAuthenticationToken
             .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

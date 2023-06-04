@@ -43,7 +43,7 @@ public class MemberController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  private String addRoom(@RequestBody MemberDto memberDto) {
+  private String addMember(@RequestBody MemberDto memberDto) {
     memberService.addOrUpdate(memberDto);
     return "Success";
   }

@@ -32,12 +32,6 @@ public class JwtAuthenticationController {
   private UserDetailsService jwtInMemoryUserDetailsService;
 
 
-  /*
-   * 
-   * { "username":"vishwa", "password":"password" }
-   * 
-   * equal to JwtRequest
-   */
   @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
   public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
       throws Exception {
@@ -56,8 +50,6 @@ public class JwtAuthenticationController {
 
     Objects.requireNonNull(username);
     Objects.requireNonNull(password);
-
-    System.out.println("authenticate username -->     "+username + "   password-->  " +password);
 
     try {
       /*
