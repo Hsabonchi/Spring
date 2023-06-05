@@ -1,6 +1,8 @@
 package chatrest.service;
 
 import java.util.List;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import chatrest.dto.MemberDto;
 import chatrest.entity.Member;
@@ -28,7 +30,7 @@ public class MemberService {
       Member member = new Member();
       member.setId(memberDto.getMemberId());
       member.setUserName(memberDto.getUserName());
-      member.setPassword(memberDto.getPassword());
+      member.setPassword(new BCryptPasswordEncoder().encode(memberDto.getPassword()));
       member.setPrimaryEmail(memberDto.getPrimaryEmail());
       member.setAdmin(memberDto.isAdmin());
       member.setModerator(memberDto.isModerator());
