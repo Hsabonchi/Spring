@@ -27,8 +27,10 @@ public class Member implements Serializable {
   @Column(name = "user_name", nullable = false, unique = true)
   private String userName;
 
+  @JsonIgnore
   private String password;
 
+  @JsonIgnore
   @Column(nullable = false)
   private String primaryEmail;
 
@@ -53,7 +55,7 @@ public class Member implements Serializable {
   @ManyToMany(mappedBy = "members", cascade = CascadeType.ALL)
   private Set<Room> rooms = new HashSet();
 
-  @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   Set<Post> posts = new HashSet();
 
 

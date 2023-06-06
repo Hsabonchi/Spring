@@ -30,19 +30,23 @@ public class Post implements Serializable {
   @JsonIgnore
   @CreationTimestamp
   public Date date_created;
+
   /*
    * A post can be created by one memeber A memeber can create many posts 1-m
    */
 
 
   @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  private Member member;
+  private Member author;
+
   /*
    * One post can have zero OR one medeiaFile One mediaFile belong to one or more posts. 1 - M
    */
 
-  @OneToMany
-   private Set<MediaFile> mediaFile = new HashSet();;
+   @OneToOne
+   private MediaFile file;
+
+
 
   /*
    * One post can have zero OR one parent One parent can be a parent of multiple posts.

@@ -33,9 +33,9 @@ public class PostService {
         postDto.setParentId(post.getParent().getId());
       }
 
-      if (post.getMember() != null) {
+      if (post.getAuthor() != null) {
 
-        postDto.setMemberId(post.getMember().getId());
+        postDto.setAuthorId(post.getAuthor().getId());
       }
       dtos.add(postDto);
     }
@@ -52,20 +52,16 @@ public class PostService {
     if (postDto.getParentId() != null) {
       Long id = postDto.getParentId();
       Post parent = postRepository.findById(id).get();
-
       post.setParent(parent);
     }
 
-    if (postDto.getMemberId() != null) {
-
-      System.out.println("getMemberId ----> " + postDto.getMemberId());
-      post.setMember(memberRepository.findById(postDto.getMemberId()).get());
+    if (postDto.getAuthorId() != null) {
+      System.out.println("herere  getMemberId ----> " + postDto.getParentId());
+      post.setAuthor(memberRepository.findById(postDto.getAuthorId()).get());
     }
 
     post = postRepository.save(post);
     return post;
-
-
   }
 
 
@@ -77,17 +73,13 @@ public class PostService {
     postDto.setNoLikes(post.getNoLikes());
 
     return postDto;
-
   }
 
-
   public boolean deletePostById(Long id, String username) {
-
-
     if (postRepository.existsById(id)) {
       Member member = memberRepository.getByName(username);
       Post post = postRepository.findById(id).get();
-      if (post.getMember().getId() == member.getId()) {
+      if (post.getAuthor().getId() == member.getId()) {
         postRepository.deleteById(id);
         return true;
       } else {

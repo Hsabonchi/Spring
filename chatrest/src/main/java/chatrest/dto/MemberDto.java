@@ -13,3 +13,4 @@ public class MemberDto {
   private boolean isModerator;
 
 }
+

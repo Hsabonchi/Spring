@@ -32,7 +32,7 @@ public class PostController {
     System.out.println("in post Controller");
     return postService.add(postDto);
   }
- // @RolesAllowed("Author")
+
   @DeleteMapping()
   public boolean delete(@RequestParam Long id,@RequestHeader("Authorization") String token) {
       // get the token from char at index to the end
@@ -41,5 +41,9 @@ public class PostController {
 
     return postService.deletePostById(id,userName);
   }
+
+  // Edit post content and or image file
+
+
 
 }

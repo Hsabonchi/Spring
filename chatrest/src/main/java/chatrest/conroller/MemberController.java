@@ -1,15 +1,11 @@
 package chatrest.conroller;
 
 import java.util.List;
+
+import chatrest.utils.JwtTokenUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import chatrest.dto.MemberDto;
 import chatrest.entity.Member;
 import chatrest.entity.Room;
@@ -23,6 +19,7 @@ public class MemberController {
 
 
   private final MemberService memberService;
+  private final JwtTokenUtil jwtTokenUtil;
 
   @GetMapping
   @ResponseStatus(HttpStatus.ACCEPTED)
@@ -47,6 +44,8 @@ public class MemberController {
     memberService.addOrUpdate(memberDto);
     return "Success";
   }
+
+
 
 }
 

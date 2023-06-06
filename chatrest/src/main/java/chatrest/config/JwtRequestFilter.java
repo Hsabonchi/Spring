@@ -59,8 +59,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
       // if token is valid configure Spring Security to manually set authentication
       if (jwtTokenUtil.validateToken(jwtToken, userDetails)) {
 
-
-        // why here is null
         /*
            userDetails is the user object which is the principle
         */
