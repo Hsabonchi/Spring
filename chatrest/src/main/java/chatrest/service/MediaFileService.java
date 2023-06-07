@@ -1,5 +1,8 @@
 package chatrest.service;
 
+import chatrest.dto.MediaFileDto;
+import chatrest.entity.MediaFile;
+import chatrest.repository.MediaFileRepository;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
@@ -7,14 +10,25 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MediaFileService {
 
-  // private final MediaFileRepository mediaFileRepository;
-  //
-  // public MediaFile findById(Long id) {
-  // return mediaFileRepository.findById(id).get();
-  // }
-  //
-  // public List<MediaFile> findAllAttachments() {
-  // return mediaFileRepository.findAll();
-  // }
+  private final MediaFileRepository mediaFileRepository;
+
+   public  String addMediaFile(MediaFileDto fileDto) {
+
+       MediaFile fileObj = new MediaFile();
+       try{
+           fileObj.setType(fileDto.getName());
+           fileObj.setContent(fileDto.getContent());
+           fileObj.setSize(fileDto.getSize());
+           fileObj.setType(fileDto.getType());
+
+           System.out.println("fileObj ====> "+fileObj);
+           mediaFileRepository.save(fileObj);
+
+       }catch(Exception e){
+          System.out.println("errorrrrr in SAVING FILE");
+          return "Unsuccessful file saving";
+       }
+      return  "Successfully upload";
+   }
 
 }

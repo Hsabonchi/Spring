@@ -2,6 +2,9 @@
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/utils/JwtTokenUtil.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/entity/Role.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/service/JwtUserDetailsService.java
+/Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/conroller/MediaFileController.java
+/Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/repository/MediaFileRepository.java
+/Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/mapper/PostMapper.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/service/PostService.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/service/MediaFileService.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/config/JwtAuthenticationEntryPoint.java
@@ -11,7 +14,9 @@
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/conroller/MemberController.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/config/PasswordConfig.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/entity/JwtRequest.java
+/Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/dto/MediaFileDto.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/entity/MediaFile.java
+/Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/mapper/MemberMapper.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/repository/MemberRepository.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/entity/Room.java
 /Users/hasanain/Desktop/chatrest-security/src/main/java/chatrest/entity/JwtResponse.java

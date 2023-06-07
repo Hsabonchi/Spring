@@ -43,7 +43,7 @@ public class Post implements Serializable {
    * One post can have zero OR one medeiaFile One mediaFile belong to one or more posts. 1 - M
    */
 
-   @OneToOne
+   @OneToOne (fetch = FetchType.EAGER)
    private MediaFile file;
 
 
@@ -54,7 +54,7 @@ public class Post implements Serializable {
    */
 
   @JsonIgnore
-  @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
   private Post parent;
 
 }

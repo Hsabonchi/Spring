@@ -1,15 +1,14 @@
 package chatrest.dto;
 
-import chatrest.entity.MediaFile;
 import lombok.Data;
-
-import java.util.Set;
 
 
 @Data
 public class PostDto {
 
-  private String message;
+  private Long postId;
+
+  private String content;
 
   private int noLikes;
 
@@ -17,6 +16,7 @@ public class PostDto {
 
   private Long parentId;
 
-  private MediaFile file;
+  // What is it a good practice
+  private Long fileId;
 
 }

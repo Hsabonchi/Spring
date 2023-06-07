@@ -16,27 +16,26 @@ import lombok.Data;
 public class MediaFile implements Serializable {
 
   private static final long serialVersionUID = 1L;
+
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.AUTO)
-  public Long id;
+  private Long id;
 
-  public String name;
+  private String name;
 
-  public int size;
+  private int size;
 
-  String type;
+  private String type;
 
   @Lob
+  @Column(length=1048576)
   private byte[] content;
 
   @CreationTimestamp
   @Column(name = "date_created")
   private Date dateCreated;
 
-  /*
-   * M - M room AND MediaFiles 1 - m room And Post
-   */
 
 
 }
