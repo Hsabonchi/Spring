@@ -9,7 +9,7 @@
   "author": "Ameya",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.3.4",
+    "mongodb": "^3.7.4",
     "readline-sync": "^1.4.10"
   }
 }
