@@ -11,7 +11,7 @@
 	<groupId>Chat.example</groupId>
 	<artifactId>chatrest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>chatrest</name>
+	<name>chat</name>
 	<description>Spring Boot for Chat App</description>
 	<properties>
 		<java.version>17</java.version>

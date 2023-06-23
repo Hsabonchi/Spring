@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="18aa8372-e742-41df-90ca-2dc07fae9ec9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/ChatrestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/ChatApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/config/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/config/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/config/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/config/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/config/PasswordConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/config/PasswordConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/conroller/JwtAuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/conroller/JwtAuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/conroller/MediaFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/conroller/MediaFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/conroller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/conroller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/conroller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/conroller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/conroller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/conroller/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/dto/MediaFileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/dto/MediaFileDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/dto/MemberDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/dto/MemberDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/dto/RoomDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/dto/RoomDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/JwtRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/JwtRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/MediaFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/MediaFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/entity/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/mapper/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/mapper/MemberMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/mapper/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/mapper/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/repository/MediaFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/repository/MediaFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/repository/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/repository/RoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/service/JwtUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/service/JwtUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/service/MediaFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/service/MediaFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/service/RoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatrest/utils/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/utils/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chatrest/ChatrestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chat/ChatrestApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/ChatrestApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/conroller/MemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/conroller/PostController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/conroller/RoomController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/dto/MemberDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/dto/PostDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/dto/RoomDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/entity/MediaFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/entity/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/entity/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/entity/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/repository/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/repository/PostRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/repository/RoomRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/service/MediaFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/service/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/service/PostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatrest/service/RoomService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/chatrest/mapper/MemberMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/chat/mapper/MemberMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/chatrest/mapper/PostMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/chat/mapper/PostMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-docker.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-docker.jar" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2R81sQcKs3Bjox3SU93RflUt9l5" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="ChatApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chat.ChatApplication" />
+      <module name="chatrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ChatApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18aa8372-e742-41df-90ca-2dc07fae9ec9" name="Changes" comment="" />
+      <created>1686617100365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686617100365</updated>
+    </task>
+    <servers />
+  </component>
+</project>
