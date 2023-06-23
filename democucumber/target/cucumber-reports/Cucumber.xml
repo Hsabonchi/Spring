@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="0.08">
+    <testcase classname="this is the test case to test spring functionalities" name="to test uppercase" time="0.021">
+        <system-out><![CDATA[Given this is the data "HelloWorld".........................................passed
+When uppercase is called....................................................passed
+Then output is "HELLOWORLD".................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="this is the test case to test spring functionalities" name="to test lowercase" time="0.001">
+        <system-out><![CDATA[Given this is the data for lowercase "HELLOWORLD"...........................passed
+When lowercase is called....................................................passed
+Then output for lowercase is "helloworld"...................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
