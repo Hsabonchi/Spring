@@ -1,10 +1,10 @@
-package chatrest;
+package demomongodb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ChatrestApplicationTests {
+class DemomongodbApplicationTests {
 
 	@Test
 	void contextLoads() {
