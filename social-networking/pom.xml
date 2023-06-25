@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rtx.example</groupId>
-	<artifactId>demomongodb</artifactId>
+	<artifactId>socail-networkin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demomongodb</name>
-	<description>Demo project for Spring Boot</description>
+	<name>socialnetworking</name>
+	<description>Social Networking</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
