@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8dccb57-603e-4593-bcb5-fdb7a1df7374" name="Changes" comment="create post service">
-      <change afterPath="$PROJECT_DIR$/src/main/java/social.tweet/entity/MediaFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/social.tweet/entity/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chatrest/target/chatrest-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/DemomongodbApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/social.tweet/SocialnetworkingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/social.tweet/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="b8dccb57-603e-4593-bcb5-fdb7a1df7374" name="Changes" comment="create Room entity and change package name">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/SocialnetworkingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/entity/MediaFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/entity/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/entity/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/entity/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social.tweet/repository/PostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/social/tweet/service/PostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/demomongodb/DemomongodbApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +66,16 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/hasanain/Desktop/GitHub/Spring/social-networking&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SocialnetworkingApplication (1)">
+  <component name="RunManager" selected="Application.social.tweet.SocialnetworkingApplication">
     <configuration name="SocialnetworkingApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demomongodb.SocialnetworkingApplication" />
       <module name="socail-networkin" />
@@ -87,6 +102,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="social.tweet.SocialnetworkingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="social.tweet.SocialnetworkingApplication" />
+      <module name="socail-networkin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="social.tweet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="demomongodb" />
       <method v="2">
@@ -102,6 +130,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.social.tweet.SocialnetworkingApplication" />
         <item itemvalue="Application.SocialnetworkingApplication (1)" />
         <item itemvalue="Application.SocialnetworkingApplication" />
       </list>
@@ -123,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687630736588</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create Room entity and change package name">
+      <created>1687732664706</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687732664706</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +168,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="hibernate-post-self-referencing" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="monogodb" />
@@ -168,7 +209,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="monogodb" />
+                        <option value="hibernate-post-self-referencing" />
                       </list>
                     </value>
                   </entry>
@@ -189,18 +230,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create post service" />
-    <option name="LAST_COMMIT_MESSAGE" value="create post service" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/social.tweet/SocialnetworkingApplication.java</url>
-          <line>6</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="create Room entity and change package name" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Room entity and change package name" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
