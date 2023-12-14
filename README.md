@@ -14,7 +14,7 @@ Resouces_Name  |Link
 ** **      |[JPA ManyToMany Relationship ](https://youtu.be/fFeHwMKeHKc)
 ** **      |[JPA OneToOne Relationship](https://youtu.be/rY0MH-WUZVs)
 ** **      |[Java Rest Design](https://youtu.be/41PfGySNbx0)
-** **      |[Java Rest Injection] (https://youtu.be/evwFK4tA_a8)
+** **      |[Java Rest Injection](https://youtu.be/evwFK4tA_a8)
 ---
 
 * [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial) |   [Java persistence with JPA](https://www.infoworld.com/article/3373652/java-persistence-with-jpa-and-hibernate-part-1-entities-and-relationships.html)
