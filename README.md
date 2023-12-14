@@ -10,6 +10,9 @@ Resouces_Name  |Link
 **Dr.Sun** |[REST API with Spring Boot](https://www.youtube.com/watch?v=EsLDbRbEcJU)
 **Dr.Sun** |[Secure REST API](https://www.youtube.com/watch?v=V-iiEUsJpC0)
 **Dr.Sun** |[Create a Spring Boot Project](https://csns.calstatela.edu/wiki/content/cysun/course_materials/cs5220/spring-boot-rest/)
+** **      |[JPA OneToMany Relationship](https://youtu.be/qLAT48GP2xc)
+** **      |[JPA ManyToMany Relationship ](https://youtu.be/fFeHwMKeHKc)
+** **      |[JPA OneToOne Relationship](https://youtu.be/rY0MH-WUZVs)
 ---
 
 * [JPA-Tutorial](https://github.com/RameshMF/JPA-Tutorial) |   [Java persistence with JPA](https://www.infoworld.com/article/3373652/java-persistence-with-jpa-and-hibernate-part-1-entities-and-relationships.html)
@@ -17,9 +20,7 @@ Resouces_Name  |Link
 * [Hibernate Query Language](https://www.tutorialspoint.com/hibernate/hibernate_query_language.htm).
 * [JPA Mapping Annotations](https://www.javaguides.net/2018/11/all-jpa-annotations-mapping-annotations.html)
 ---
-* .getSingleResult()
-   * Execute a SELECT query that returns a single result.
-*  `getResultList` executes the JPQL SELECT statement and returns the results as a List
+
 * JPA  Operations that modify database content, such as a store, update, and delete should only be performed within an active transaction.
   	---
   - `entityManager.getTransaction().begin();` | `entityManager.getTransaction().commit();`| `entityManagerFactory.close();`
